@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio ALILI LINA</title>
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #eee;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(10, 10, 26, 0.95);
+            border-bottom: 1px solid #1a1a3a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 60px;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.45rem;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: #aaa;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 6px 5px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #1d8efa;
+        }
+
+        nav ul li a.active::after,
+        nav ul li a:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 3px;
+            background-color: #1d8efa;
+            border-radius: 5px;
+        }
+
+        nav button.download-cv {
+            cursor: pointer;
+            background-color: #1d8efa;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 9px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background-color 0.3s;
+        }
+
+        nav button.download-cv:hover {
+            background-color: #1476d9;
+        }
+
+        /* ===== HERO (accueil) ===== */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            padding: 0 60px;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            padding-top: 90px;
+        }
+
+        /* Fond animé réseau de points */
+        #network-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: #0a0a0a;
+        }
+
+        /* texte à gauche */
+        .hero-text {
+            z-index: 10;
+            max-width: 600px;
+            color: #fff;
+        }
+
+        .hero-text .name-tag {
+            display: inline-block;
+            background-color: #1d8efa;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            user-select: none;
+        }
+
+        .hero-text h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .hero-text .highlight {
+            font-weight: 800;
+            color: #8c8c8c;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            color: #a8a8a8;
+            max-width: 520px;
+            line-height: 1.5;
+        }
+
+        /* boutons */
+        .hero-buttons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .btn-primary {
+            background-color: #1d8efa;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 28px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #006fd3;
+        }
+
+        .btn-secondary {
+            background-color: #22222c;
+            border: 2px solid #555570;
+            padding: 14px 28px;
+            border-radius: 28px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #aaa;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            border-color: #1d8efa;
+            color: #1d8efa;
+        }
+
+        /* image à droite */
+        .hero-image {
+            z-index: 10;
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background-color: #ffb703; /* cercle orange */
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 0 35px #1d8efa88;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 280px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #0a0a0a;
+        }
+
+        /* icônes réseaux sous texte */
+        .social-links {
+            margin-top: 38px;
+            display: flex;
+            gap: 25px;
+            color: #1d8efa;
+            font-size: 1.4rem;
+        }
+
+        .social-links a {
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #47a3f3;
+        }
+
+        /* ===================== NETWORK BACKGROUND CANVAS ===================== */
+        canvas#network-canvas {
+            position: fixed;
+            inset: 0;
+            display: block;
+            z-index: 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            #hero {
+                flex-direction: column;
+                padding-top: 90px;
+                padding-bottom: 60px;
+                gap: 40px;
+                justify-content: center;
+            }
+
+            .hero-text {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero-image {
+                width: 260px;
+                height: 260px;
+            }
+
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+
+            nav {
+                padding: 15px 25px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                padding: 11px 22px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">Alili Lina.</div>
+        <ul>
+            <li><a href="#hero" class="active">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="download-cv" onclick="downloadCV()">
+            Télécharger le CV
+            <svg style="width:16px;height:16px;margin-left:6px;" fill="white" viewBox="0 0 24 24">
+                <path
+                    d="M5,20h14v-2H5V20z M12,2L12,14M8 10 L12 14 L16 10" stroke="white" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- FOND BACKGROUND RÉSEAU DE POINTS -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- SECTION ACCUEIL -->
+    <section id="hero">
+        <div class="hero-text">
+            <span class="name-tag">ALILI LINA</span>
+            <h1>Je suis <span class="highlight">Développeur Web</span></h1>
+            <p>Étudiante en informatique passionnée par le développement Web et le design UI/UX, déterminée à créer des expériences utilisateurs innovantes et fluides.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Me contacter</a>
+                <a href="ALILI_LINA_CV.pdf" download class="btn-secondary">Télécharger le CV</a>
+            </div>
+            <div class="social-links" aria-label="Liens sociaux">
+                <a href="#" target="_blank" aria-label="LinkedIn"><svg fill="currentColor" viewBox="0 0 24 24"
+                        width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm-9 14v-6H8v6h2zm1-6v6h2v-4c0-1.3 1-1.5 1.5-1.5a1.8 1.8 0 0 1 1.5 1.5v4h2v-5a3 3 0 0 0-6 0zM8 9h2v2H8z" />
+                    </svg></a>
+                <a href="#" target="_blank" aria-label="GitHub"><svg fill="currentColor" viewBox="0 0 24 24"
+                        width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.167 6.84 9.489.5.1.676-.217.676-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.338-3.369-1.338-.454-1.15-1.11-1.457-1.11-1.457-.908-.62.069-.607.069-.607 1.004.07 1.533 1.038 1.533 1.038.892 1.53 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.34-2.222-.253-4.555-1.113-4.555-4.952 0-1.093.39-1.986 1.029-2.683-.104-.253-.446-1.27.099-2.646 0 0 .84-.27 2.75 1.025a9.564 9.564 0 0 1 2.5-.337 9.51 9.51 0 0 1 2.5.337c1.91-1.295 2.75-1.025 2.75-1.025.545 1.376.203 2.392.1 2.646.64.697 1.028 1.59 1.028 2.683 0 3.848-2.337 4.696-4.566 4.946.359.308.678.916.678 1.846 0 1.333-.012 2.408-.012 2.735 0 .267.175.59.682.49C19.135 20.165 22 16.415 22 12c0-5.52-4.48-10-10-10z" />
+                    </svg></a>
+                <a href="#" target="_blank" aria-label="Dribbble"><svg fill="currentColor" viewBox="0 0 24 24"
+                        width="22" height="22" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2a10 10 0 1 0 9.916 8.437A10 10 0 0 0 12 2zm6.938 3.064a8.023 8.023 0 0 1 1.58 4.679 21.256 21.256 0 0 0-6.787-.156 37.901 37.901 0 0 0-4.5-6.614 8.026 8.026 0 0 1 9.707 2.091zm-13.258-.273a8.019 8.019 0 0 1 3.634-2.232 38.029 38.029 0 0 1 5.118 7.267 21.17 21.17 0 0 0-9.434 2.506 8.02 8.02 0 0 1 .682-7.541zm-1.045 7.69a20.886 20.886 0 0 1 9.987-2.651 35.542 35.542 0 0 1 5.451 6.652 8.04 8.04 0 0 1-15.438-4.001zm12.114 5.248a36.087 36.087 0 0 0-5.533-6.743 21.857 21.857 0 0 1 7.913.177 8.035 8.035 0 0 1-2.38 6.566z" />
+                    </svg></a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://i.pravatar.cc/320" alt="Photo d'Alili Lina" loading="lazy" />
+        </div>
+    </section>
+
+    <!-- SCRIPTS BACKGROUND RÉSEAU -->
+    <script>
+        // Canvas network background animation by TL (simple implementation)
+
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let points = [];
+
+        function random(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        class Point {
+            constructor() {
+                this.x = random(0, width);
+                this.y = random(0, height);
+                this.vx = random(-0.3, 0.3);
+                this.vy = random(-0.3, 0.3);
+            }
+            move() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x > width) this.x = 0;
+                else if (this.x < 0) this.x = width;
+                if (this.y > height) this.y = 0;
+                else if (this.y < 0) this.y = height;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(29, 142, 250, 0.7)';
+                ctx.fill();
+            }
+        }
+
+        function connect(p1, p2) {
+            const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+            if (dist < 140) {
+                ctx.beginPath();
+                ctx.strokeStyle = `rgba(29, 142, 250, ${1 - dist / 140})`;
+                ctx.lineWidth = 1;
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.stroke();
+            }
+        }
+
+        function setup() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            points = [];
+            for (let i = 0; i < 70; i++) {
+                points.push(new Point());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            points.forEach(p => {
+                p.move();
+                p.draw();
+            });
+            for (let i = 0; i < points.length; i++) {
+                for (let j = i + 1; j < points.length; j++) {
+                    connect(points[i], points[j]);
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            setup();
+        });
+
+        setup();
+        animate();
+
+        // Fonction bouton télécharger CV (à modifier selon chemin fichier)
+        function downloadCV() {
+            window.open('ALILI_LINA_CV.pdf', '_blank');
+        }
+    </script>
+</body>
+
+</html>
