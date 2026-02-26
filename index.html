@@ -316,6 +316,13 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </head>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Merci pour votre message, je vous répondrai rapidement !');
+        this.reset();
+    });
+</script>
 
 <body>
     <nav>
@@ -412,13 +419,24 @@
             </article>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>
-                Email : <a href="mailto:alililina163@gmail.com">alililina163@gmail.com</a><br />
-                Téléphone : +33 7 49 02 84 08
-            </p>
-        </section>
+        <section id="contact" style="max-width: 600px; margin: 0 auto 70px; padding: 30px; background: #d0e8ff; border-radius: 15px; box-shadow: 0 0 25px #9ec9ff;">
+    <h2 style="text-align: center; color: #0077ff; font-weight: 900; font-size: 2.8rem; text-shadow: 0 0 8px #0077ff; margin-bottom: 30px;">
+        Contact
+    </h2>
+    <p style="font-size: 1.1rem; margin-bottom: 15px; text-align: center;">
+        Email : <a href="mailto:alililina163@gmail.com">alililina163@gmail.com</a><br />
+        Téléphone : +33 7 49 02 84 08
+    </p>
+
+    <form id="contact-form" style="display: flex; flex-direction: column; gap: 15px;">
+        <textarea name="message" rows="6" placeholder="Écris ton message ici..." required
+            style="padding: 15px; font-size: 1rem; border-radius: 10px; border: 2px solid #a0c8ff; resize: vertical; outline: none; box-shadow: inset 0 0 6px #a8cdfc;"></textarea>
+        <button type="submit"
+            style="background-color: #0077ff; color: white; font-weight: 700; padding: 12px 20px; border-radius: 30px; border: none; cursor: pointer; font-size: 1.1rem; box-shadow: 0 0 12px #0077ff; transition: background-color 0.3s;">
+            Envoyer
+        </button>
+    </form>
+</section>
     </main>
 
     <footer>
