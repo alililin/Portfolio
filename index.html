@@ -2,463 +2,209 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio ALILI LINA</title>
-    <style>
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Alili Lina</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f7fa;
-            color: #222;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+  <!-- Lien vers CSS -->
+  <link rel="stylesheet" href="styles.css" />
 
-        nav {
-            background: #fff;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        nav .logo {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #0070f3;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            color: #555;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s;
-            cursor: pointer;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active {
-            color: #0070f3;
-        }
-
-        nav button.download-cv {
-            background: #0070f3;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            font-weight: 600;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        nav button.download-cv:hover {
-            background: #005bb5;
-        }
-
-        main {
-            flex: 1;
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Sections générales */
-        section {
-            margin-bottom: 70px;
-        }
-
-        h2.section-title {
-            font-weight: 800;
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 50px;
-            color: #0070f3;
-            text-shadow: 0 0 12px #0070f3;
-        }
-
-        /* SECTION ACCUEIL */
-        #hero {
-            display: flex;
-            gap: 60px;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        #hero-text {
-            max-width: 550px;
-            flex: 1 1 550px;
-        }
-
-        #hero-text h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #0070f3;
-        }
-
-        #hero-text p {
-            font-size: 1.15rem;
-            margin-bottom: 30px;
-            color: #444;
-            line-height: 1.5;
-        }
-
-        .btn-primary,
-        .btn-secondary {
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 12px 28px;
-            border-radius: 30px;
-            cursor: pointer;
-            border: none;
-            transition: background-color 0.3s, color 0.3s;
-            margin-right: 15px;
-        }
-
-        .btn-primary {
-            background-color: #0070f3;
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background-color: #005bb5;
-        }
-
-        .btn-secondary {
-            background-color: #eee;
-            color: #0070f3;
-            border: 2px solid #0070f3;
-        }
-
-        .btn-secondary:hover {
-            background-color: #0070f3;
-            color: white;
-        }
-
-        #hero-img {
-            flex: 0 0 320px;
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 112, 243, 0.35);
-            border: 8px solid #0070f3;
-            transition: transform 0.3s;
-        }
-
-        #hero-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        #hero-img:hover {
-            transform: scale(1.05);
-        }
-
-        .social-icons {
-            margin-top: 15px;
-            display: flex;
-            gap: 20px;
-        }
-
-        .social-icons a {
-            color: #0070f3;
-            font-size: 1.6rem;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .social-icons a:hover {
-            color: #005bb5;
-        }
-
-        /* SECTION À PROPOS */
-        #about {
-            background-color: #12122a;
-            color: #eee;
-            padding: 50px 30px;
-            border-radius: 15px;
-            max-width: 1100px;
-            margin: 0 auto 70px;
-            box-shadow: 0 0 20px #0070f3aa;
-        }
-
-        #about h3 {
-            color: #03a9f4;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            border-bottom: 2px solid #03a9f4;
-            padding-bottom: 8px;
-        }
-
-        #about p, #about ul {
-            font-size: 1.05rem;
-            color: #ccc;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        #about ul {
-            list-style: disc inside;
-            columns: 2;
-        }
-
-        /* SECTION PROJETS */
-        #projects {
-            background-color: #0a0e29;
-            color: white;
-            padding: 60px 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 30px #03a9f4aa;
-        }
-
-        #projects .project-article {
-            background: #141b3d;
-            border-radius: 18px;
-            padding: 20px 30px;
-            box-shadow: 0 0 20px #03a9f4;
-            line-height: 1.5;
-            margin-bottom: 30px;
-            transition: background-color 0.3s ease;
-        }
-
-        #projects .project-article:hover {
-            background-color: #0e1625;
-        }
-
-        #projects .project-article h3 {
-            color: #03a9f4;
-            font-weight: 700;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
-
-        #projects .project-article p {
-            color: #ccc;
-            font-size: 1rem;
-        }
-
-        /* SECTION CONTACT */
-        #contact {
-            max-width: 1100px;
-            margin: 0 auto 70px;
-            padding: 40px 30px;
-            background: #e9f1fb;
-            border-radius: 15px;
-            box-shadow: 0 0 20px #0070f3aa;
-            color: #222;
-        }
-
-        #contact h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #0070f3;
-            font-weight: 800;
-            font-size: 2.8rem;
-            text-shadow: 0 0 12px #0070f3;
-        }
-
-        #contact p {
-            width: fit-content;
-            margin: 0 auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            white-space: pre-line;
-            font-weight: 600;
-        }
-
-        /* Responsive */
-        @media (max-width: 800px) {
-            #hero {
-                flex-direction: column;
-                gap: 40px;
-                text-align: center;
-            }
-
-            main {
-                margin: 20px auto;
-            }
-
-            #hero-img {
-                margin: 0 auto;
-                width: 260px;
-                height: 260px;
-                border-width: 6px;
-            }
-        }
-    </style>
-
-    <!-- Icônes réseaux via CDN -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+  <!-- Font Awesome CDN pour les icônes -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-    
 
 <body>
-    <nav>
-        <div class="logo">Alili Lina</div>
-        <ul>
-            <li><a href="#hero" class="active">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="download-cv" onclick="window.open('ALILI_LINA_CV.pdf','_blank')">Télécharger le CV <i class="fas fa-download"></i></button>
-    </nav>
-
-    <main>
-        <section id="hero">
-            <div id="hero-text">
-                <h1>Je suis Administratrice des systèmes & réseaux</h1>
-                <p>Étudiante en L3 informatique passionnée par les domaines des systèmes, réseaux et la cybersécurité,  Sérieuse, rigoureuse et motivée, je m’investis pleinement dans mon parcours académique et dans le développement de mes compétences techniques.</p>
-                <button class="btn-primary" onclick="location.href='#contact'">Me contacter</button>
-                <button class="btn-secondary" onclick="window.open('ALILI_LINA_CV.pdf','_blank')">Télécharger le CV</button>
-
-                <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="#" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-
-            <div id="hero-img">
-                <img src="photo_lina.png" alt="Photo d'Alili Lina" />
-            </div>
-        </section>
-
-        <section id="about">
-            <h2 class="section-title">À propos</h2>
-            <h3>Formation</h3>
-            <p>
-                LICENCE 3 INFORMATIQUE  2025-2026<br />
-                Université d’Avignon (Centre d’Enseignement et de Recherche en Informatique)
-            </p>
-            <p>
-                LICENCE 2 INFORMATIQUE  2024-2025<br />
-                Université d’Avignon (Centre d’Enseignement et de Recherche en Informatique)
-            </p>
-            <p>
-                LICENCE 1 INFORMATIQUE (CURSUS MASTER D’INGÉNIERIE)  2023-2024<br />
-                Université d’Avignon (Centre d’Enseignement et de Recherche en Informatique)
-            </p>
-            <p>
-                PREMIÈRE ANNÉE INGÉNIEURE EN INFORMATIQUE  2022-2023<br />
-                Université de Béjaia, Algérie
-            </p>
-            <p>
-                BACCALAURÉAT SÉRIE SCIENCE EXPÉRIMENTALE | 2022<br />
-                Lycée Zennache Béjaia, Algérie
-            </p>
-
-            <h3>Compétences</h3>
-            <ul>
-                <li><strong>Langages de programmation :</strong> C, C++, JAVA, PYTHON, BASH, R, JULIA, PROLOG</li>
-                <li><strong>Développement web :</strong> HTML, CSS, JAVASCRIPT, PHP, FRAMEWORK YII, JQUERY, NODE.JS</li>
-                <li><strong>Bases de données :</strong> POSTGRESQL, MYSQL, SQL, MONGODB</li>
-                <li><strong>Réseaux et systèmes sécurité :</strong> Configuration et dépannage réseaux (CISCO PACKET TRACER), Routage et commutation (VLAN, interconnexion réseaux), Protocoles réseaux (TCP/IP, UDP, FTP, ICMP), Services infrastructure (DHCP, DNS, NAT), Sécurisation échanges (SSL / TLS, SSH), Cryptographie (certificats, PKI), Environnements virtualisés (VMWARE, HYPER-V), Mise en place de serveurs messagerie (SMTP POSTFIX, IMAP, POP)</li>
-                <li><strong>Environnement et outils :</strong> VSCODE, LOGSYS, GITHUB, ECLIPSE, FIGMA, CISCO PACKET TRACER, CONDA</li>
-            </ul>
-        </section>
-
-        <section id="projects">
-            <h2 class="section-title">Mes Projets</h2>
-
-            <article class="project-article">
-                <h3>APPLICATION WEB DE COVOITURAGE (CERICAR)</h3>
-                <p>Développement d’une application web dynamique, de réservations des trajets avec gestion des utilisateurs, annonces (PHP, Framework Yii, JQuery).</p>
-            </article>
-
-            <article class="project-article">
-                <h3>SYSTÈME INTERACTIF</h3>
-                <p>Développement d’un système inspiré par des services des fournisseurs d’accès à Internet (FAI), offrant aux utilisateurs la possibilité de configurer leur réseau.</p>
-            </article>
-
-            <article class="project-article">
-                <h3>SALON VISIONNAGE VIRTUEL (PLAYTOGETHER)</h3>
-                <p>Réalisation d'un site web permettant de rejoindre, créer, regarder des vidéos YouTube synchronisées à plusieurs en temps réel (WebSockets, Java, Node.js).</p>
-            </article>
-
-            <article class="project-article">
-                <h3>PLATEFORME LOGICIEL DE MONITORING D’UN PARC INFORMATIQUE</h3>
-                <p>Développement d’une plateforme de surveillance des serveurs, détection des situations de crise, création des alertes (Python, Bash, Flask).</p>
-            </article>
-
-            <article class="project-article">
-                <h3>BRAS MANIPULATEUR</h3>
-                <p>Réalisation d'un bras manipulateur qui permet de distinguer des formes à travers leurs couleurs et de le manipuler avec une application mobile Android.</p>
-            </article>
-        </section>
-
-       <section id="contact" style="display: flex; gap: 50px; max-width: 1000px; margin: 0 auto 80px; padding: 40px 20px; color: white; font-family: Arial, sans-serif;">
-
-  <!-- Bloc contact infos -->
-  <div style="flex: 1; background-color: #1e1e1e; padding: 30px 40px; border-radius: 18px; box-shadow: 0 0 15px #0a3d91;">
-    <h2 style="font-weight: 700; font-size: 1.9rem; margin-bottom: 30px;">Retrouvez-moi</h2>
-    <p style="font-size: 1.1rem; margin-bottom: 18px;">
-      <span style="margin-right: 10px;">&#9993;</span><!-- envelope icon -->  
-      Email: <a href="mailto:alililina163@gmail.com" style="color: #3eaaff; text-decoration:none;">alililina163@gmail.com</a>
-    </p>
-    <p style="font-size: 1.1rem;">
-      <span style="margin-right: 10px;">&#128222;</span><!-- telephone icon -->
-      Tel: +33 7 49 02 84 08
-    </p>
-  </div>
-
-  <!-- Bloc formulaire -->
-  <form id="contact-form" style="flex: 2; display: flex; flex-direction: column; gap: 20px;" onsubmit="submitForm(event)">
-    <div style="display: flex; gap: 20px;">
-      <input type="text" name="name" placeholder="Nom" required
-        style="flex: 1; padding: 15px 20px; background: #121212; border: none; border-radius: 12px; color: white; font-size: 1rem; outline:none;"
-      />
-      <input type="email" name="email" placeholder="Email" required
-        style="flex: 1; padding: 15px 20px; background: #121212; border: none; border-radius: 12px; color: white; font-size: 1rem; outline:none;"
-      />
-    </div>
-    <textarea name="message" placeholder="Message" required rows="7"
-      style="padding: 15px 20px; background: #121212; border: none; border-radius: 12px; color: white; font-size: 1rem; outline:none; resize: vertical;"></textarea>
-    <button type="submit" style="align-self: flex-start; background-color: #0a3d91; border: none; padding: 12px 28px; border-radius: 25px; color: white; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; box-shadow: 0 0 15px #0a3d91; transition: background-color 0.3s;">
-      Envoyer
-      <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="20" height="20" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+  <nav>
+    <div class="logo">ALILI LINA</div>
+    <ul>
+      <li><a href="#hero" class="active">Accueil</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="download-cv" onclick="window.open('ALILI_LINA_CV.pdf','_blank')">
+      Télécharger le CV <i class="fas fa-download"></i>
     </button>
-  </form>
-</section>
+  </nav>
 
-<script>
-  function submitForm(event) {
-    event.preventDefault();
-    alert('Merci pour votre message, je vous recontacterai rapidement !');
-    event.target.reset();
-  }
-</script>
-    </main>
+  <main>
+    <!-- Section Hero -->
+    <section id="hero">
+      <div class="hero-text">
+        <h1>Je suis Administratrice des systèmes & réseaux</h1>
+        <p>Étudiante en L3 informatique passionnée par les domaines des systèmes, réseaux et la cybersécurité,
+          Sérieuse, rigoureuse et motivée, je m’investis pleinement dans mon parcours académique et dans le développement
+          de mes compétences techniques.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="location.href='#contact'">Me contacter</button>
+          <button class="btn-secondary" onclick="window.open('ALILI_LINA_CV.pdf','_blank')">Télécharger le CV</button>
+        </div>
+        <div class="social-icons">
+          <a href="#" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="photo_lina.png" alt="Photo d'Alili Lina" />
+      </div>
+    </section>
 
-    <footer>
-        &copy; 2026 Alili Lina - Portfolio LINA ALILI.
-    </footer>
+    <!-- Section À propos -->
+    <section id="about">
+      <h2>À propos</h2>
+      <div class="about-content">
+        <div class="formation">
+          <h3>Formation</h3>
+          <ul>
+            <li><strong>LICENCE 3 INFORMATIQUE</strong> 2025-2026<br>Université d’Avignon (Centre d’Enseignement et de
+              Recherche en Informatique)</li>
+            <li><strong>LICENCE 2 INFORMATIQUE</strong> 2024-2025<br>Université d’Avignon (Centre d’Enseignement et de Recherche
+              en Informatique)</li>
+            <li><strong>LICENCE 1 INFORMATIQUE (CURSUS MASTER D’INGÉNIERIE)</strong> 2023-2024<br>Université d’Avignon (Centre
+              d’Enseignement et de Recherche en Informatique)</li>
+            <li><strong>PREMIÈRE ANNÉE INGÉNIEURE EN INFORMATIQUE</strong> 2022-2023<br>Université de Béjaia, Algérie</li>
+            <li><strong>BACCALAURÉAT SÉRIE SCIENCE EXPÉRIMENTALE</strong> 2022<br>Lycée Zennache Béjaia, Algérie</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Compétences -->
+    <section id="skills">
+      <h2>Compétences</h2>
+      <div class="skills-container">
+        <div class="skill-block web-skills">
+          <h3><i class="fas fa-code"></i> Développement Web</h3>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>Framework Yii</li>
+            <li>jQuery</li>
+            <li>Node.js</li>
+          </ul>
+        </div>
+        <div class="skill-block prog-langs">
+          <h3><i class="fas fa-laptop-code"></i> Langages de programmation</h3>
+          <ul>
+            <li>C, C++</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>Bash</li>
+            <li>R</li>
+            <li>Julia</li>
+            <li>Prolog</li>
+          </ul>
+        </div>
+        <div class="skill-block databases">
+          <h3><i class="fas fa-database"></i> Bases de données</h3>
+          <ul>
+            <li>PostgreSQL</li>
+            <li>MySQL</li>
+            <li>SQL</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+        <div class="skill-block network-security">
+          <h3><i class="fas fa-network-wired"></i> Réseaux & sécurité</h3>
+          <ul>
+            <li>Configuration & dépannage réseaux (Cisco Packet Tracer)</li>
+            <li>Routage et commutation (VLAN, interconnexion réseaux)</li>
+            <li>Protocoles TCP/IP, UDP, FTP, ICMP</li>
+            <li>Services: DHCP, DNS, NAT</li>
+            <li>Sécurisation échanges (SSL/TLS, SSH)</li>
+            <li>Cryptographie (Certificats, PKI)</li>
+            <li>Environnements virtualisés (VMware, Hyper-V)</li>
+            <li>Serveurs messagerie (SMTP Postfix, IMAP, POP)</li>
+          </ul>
+        </div>
+        <div class="skill-block tools">
+          <h3><i class="fas fa-tools"></i> Outils & Environnements</h3>
+          <ul>
+            <li>VSCode</li>
+            <li>Logsys</li>
+            <li>GitHub</li>
+            <li>Eclipse</li>
+            <li>Figma</li>
+            <li>Cisco Packet Tracer</li>
+            <li>Conda</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Projets -->
+    <section id="projects">
+      <h2>Mes Projets</h2>
+      <div class="projects-container">
+
+        <article class="project-card">
+          <h3>APPLICATION WEB DE COVOITURAGE (CERICAR)</h3>
+          <p>Développement d’une application web dynamique, de réservations des trajets avec gestion des utilisateurs,
+            annonces (PHP, Framework Yii, JQuery).</p>
+        </article>
+
+        <article class="project-card">
+          <h3>SYSTÈME INTERACTIF</h3>
+          <p>Développement d’un système inspiré par des services des fournisseurs d’accès à Internet (FAI), offrant aux
+            utilisateurs la possibilité de configurer leur réseau.</p>
+        </article>
+
+        <article class="project-card">
+          <h3>SALON VISIONNAGE VIRTUEL (PLAYTOGETHER)</h3>
+          <p>Réalisation d'un site web permettant de rejoindre, créer, regarder des vidéos YouTube synchronisées à plusieurs
+            en temps réel (WebSockets, Java, Node.js).</p>
+        </article>
+
+        <article class="project-card">
+          <h3>PLATEFORME LOGICIEL DE MONITORING D’UN PARC INFORMATIQUE</h3>
+          <p>Développement d’une plateforme de surveillance des serveurs, détection des situations de crise, création des
+            alertes (Python, Bash, Flask).</p>
+        </article>
+
+        <article class="project-card">
+          <h3>BRAS MANIPULATEUR</h3>
+          <p>Réalisation d'un bras manipulateur qui permet de distinguer des formes à travers leurs couleurs et de le manipuler
+            avec une application mobile Android.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Retrouvez-moi</h3>
+          <p><i class="fas fa-envelope"></i> Email:
+            <a href="mailto:alililina163@gmail.com">alililina163@gmail.com</a>
+          </p>
+          <p><i class="fas fa-phone"></i> Tel: +33 7 49 02 84 08</p>
+        </div>
+
+        <form id="contact-form" onsubmit="submitForm(event)">
+          <input type="text" name="name" placeholder="Nom" required />
+          <input type="email" name="email" placeholder="Email" required />
+          <textarea name="message" placeholder="Message" rows="6" required></textarea>
+          <button type="submit">
+            Envoyer
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Alili Lina - Portfolio LINA ALILI.
+  </footer>
+
+  <!-- Script -->
+  <script src="scripts.js"></script>
 </body>
 
 </html>
