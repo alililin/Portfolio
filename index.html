@@ -6,183 +6,224 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio Alili Lina</title>
 
-  <!-- Lien vers CSS -->
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Font Awesome CDN pour les icônes -->
+  <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <nav>
     <div class="logo">ALILI LINA</div>
-    <ul>
+
+    <div class="menu-toggle" id="menu-toggle" aria-label="Menu responsive" tabindex="0">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <ul id="nav-links" class="nav-links">
       <li><a href="#hero" class="active">Accueil</a></li>
       <li><a href="#about">À propos</a></li>
       <li><a href="#skills">Compétences</a></li>
       <li><a href="#projects">Projets</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="download-cv" onclick="window.open('ALILI_LINA_CV.pdf','_blank')">
+
+    <button class="download-cv" onclick="window.open('ALILI_LINA_CV.pdf', '_blank')">
       Télécharger le CV <i class="fas fa-download"></i>
     </button>
   </nav>
 
   <main>
-    <!-- Section Hero -->
+    <!-- Hero -->
     <section id="hero">
       <div class="hero-text">
-        <h1>Passionnée par les domaines des systèmes & réseaux et la Cybersécurité </h1>
-        <p>Étudiante en Licence informatique, je me spécialise dans les  domaines des systèmes, réseaux et la cybersécurité,
-          Sérieuse, rigoureuse et motivée, je m’investis pleinement dans mon parcours académique et dans le développement
-          de mes compétences techniques.</p>
-        <div class="hero-buttons">
-          <button class="btn-primary" onclick="location.href='#contact'">Me contacter</button>
-          <button class="btn-secondary" onclick="window.open('ALILI_LINA_CV.pdf','_blank')">Télécharger le CV</button>
-        </div>
+        <h1>Alili Lina</h1>
+        <h2>Passionnée par l'IA et le développement web</h2>
+        <p>Étudiante en L3 Informatique, je me spécialise dans le développement d'applications web modernes en alliant
+          intelligence artificielle et bonnes pratiques de développement. Mon objectif : créer des solutions techniques
+          performantes, intuitives et évolutives.</p>
+
         <div class="social-icons">
-          <a href="#" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="#" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="mailto:alililina163@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
         </div>
-      </div>
-      <div class="hero-img">
-        <img src="photo_lina.png" alt="Photo d'Alili Lina" />
+
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="location.href='#projects'">Voir mes projets</button>
+          <button class="btn-secondary" onclick="location.href='#contact'">Me contacter</button>
+        </div>
       </div>
     </section>
 
-    <!-- Section À propos -->
+    <!-- À propos -->
     <section id="about">
       <h2>À propos</h2>
       <div class="about-content">
-        <div class="formation">
-          <h3>Formation</h3>
-          <ul>
-            <li><strong>LICENCE 3 INFORMATIQUE</strong> 2025-2026<br>Université d’Avignon (Centre d’Enseignement et de
-              Recherche en Informatique)</li>
-            <li><strong>LICENCE 2 INFORMATIQUE</strong> 2024-2025<br>Université d’Avignon (Centre d’Enseignement et de Recherche
-              en Informatique)</li>
-            <li><strong>LICENCE 1 INFORMATIQUE (CURSUS MASTER D’INGÉNIERIE)</strong> 2023-2024<br>Université d’Avignon (Centre
-              d’Enseignement et de Recherche en Informatique)</li>
-            <li><strong>PREMIÈRE ANNÉE INGÉNIEURE EN INFORMATIQUE</strong> 2022-2023<br>Université de Béjaia, Algérie</li>
-            <li><strong>BACCALAURÉAT SÉRIE SCIENCE EXPÉRIMENTALE</strong> 2022<br>Lycée Zennache Béjaia, Algérie</li>
-          </ul>
-        </div>
+        <h3>Formation</h3>
+        <ul>
+          <li><strong>LICENCE 3 INFORMATIQUE</strong> 2025-2026<br>Université d’Avignon (Centre d’Enseignement et de Recherche en Informatique)</li>
+          <li><strong>LICENCE 2 INFORMATIQUE</strong> 2024-2025<br>Université d’Avignon (Centre d’Enseignement et de Recherche en Informatique)</li>
+          <li><strong>LICENCE 1 INFORMATIQUE (CURSUS MASTER D’INGÉNIERIE)</strong> 2023-2024<br>Université d’Avignon (Centre d’Enseignement et de Recherche en Informatique)</li>
+          <li><strong>PREMIÈRE ANNÉE INGÉNIEURE EN INFORMATIQUE</strong> 2022-2023<br>Université de Béjaia, Algérie</li>
+          <li><strong>BACCALAURÉAT SÉRIE SCIENCE EXPÉRIMENTALE</strong> 2022<br>Lycée Zennache Béjaia, Algérie</li>
+        </ul>
       </div>
     </section>
 
-    <!-- Section Compétences -->
+    <!-- Compétences -->
     <section id="skills">
       <h2>Compétences</h2>
+
       <div class="skills-container">
-        <div class="skill-block web-skills">
-          <h3><i class="fas fa-code"></i> Développement Web</h3>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>PHP</li>
-            <li>Framework Yii</li>
-            <li>jQuery</li>
-            <li>Node.js</li>
-          </ul>
+        <!-- Backend Development -->
+        <div class="skill-block">
+          <div class="skill-header">
+            <h3>Backend Development</h3>
+            <span class="skill-badge">BE</span>
+          </div>
+          <div class="skill-item">
+            <span>PHP</span>
+            <span class="skill-percent">80%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>Node.js</span>
+            <span class="skill-percent">65%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 65%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>Next.js</span>
+            <span class="skill-percent">50%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 50%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>Nest.js</span>
+            <span class="skill-percent">40%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 40%;"></div>
+            </div>
+          </div>
         </div>
-        <div class="skill-block prog-langs">
-          <h3><i class="fas fa-laptop-code"></i> Langages de programmation</h3>
-          <ul>
-            <li>C, C++</li>
-            <li>Java</li>
-            <li>Python</li>
-            <li>Bash</li>
-            <li>R</li>
-            <li>Julia</li>
-            <li>Prolog</li>
-          </ul>
+
+        <!-- Frontend Development -->
+        <div class="skill-block">
+          <div class="skill-header">
+            <h3>Frontend Development</h3>
+            <span class="skill-badge">FE</span>
+          </div>
+          <div class="skill-item">
+            <span>HTML</span>
+            <span class="skill-percent">95%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 95%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>CSS</span>
+            <span class="skill-percent">90%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>JavaScript</span>
+            <span class="skill-percent">85%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>React.js</span>
+            <span class="skill-percent">60%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 60%;"></div>
+            </div>
+          </div>
         </div>
-        <div class="skill-block databases">
-          <h3><i class="fas fa-database"></i> Bases de données</h3>
-          <ul>
-            <li>PostgreSQL</li>
-            <li>MySQL</li>
-            <li>SQL</li>
-            <li>MongoDB</li>
-          </ul>
-        </div>
-        <div class="skill-block network-security">
-          <h3><i class="fas fa-network-wired"></i> Réseaux & sécurité</h3>
-          <ul>
-            <li>Configuration & dépannage réseaux (Cisco Packet Tracer)</li>
-            <li>Routage et commutation (VLAN, interconnexion réseaux)</li>
-            <li>Protocoles TCP/IP, UDP, FTP, ICMP</li>
-            <li>Services: DHCP, DNS, NAT</li>
-            <li>Sécurisation échanges (SSL/TLS, SSH)</li>
-            <li>Cryptographie (Certificats, PKI)</li>
-            <li>Environnements virtualisés (VMware, Hyper-V)</li>
-            <li>Serveurs messagerie (SMTP Postfix, IMAP, POP)</li>
-          </ul>
-        </div>
-        <div class="skill-block tools">
-          <h3><i class="fas fa-tools"></i> Outils & Environnements</h3>
-          <ul>
-            <li>VSCode</li>
-            <li>Logsys</li>
-            <li>GitHub</li>
-            <li>Eclipse</li>
-            <li>Figma</li>
-            <li>Cisco Packet Tracer</li>
-            <li>Conda</li>
-          </ul>
+
+        <!-- Network & Security -->
+        <div class="skill-block">
+          <div class="skill-header">
+            <h3>Network & Security</h3>
+            <span class="skill-badge">NS</span>
+          </div>
+          <div class="skill-item">
+            <span>CISCO Packet Tracer</span>
+            <span class="skill-percent">80%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>Cryptography</span>
+            <span class="skill-percent">70%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 70%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>Network protocols (TCP/IP, UDP)</span>
+            <span class="skill-percent">85%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill-item">
+            <span>Server security (SSH, TLS)</span>
+            <span class="skill-percent">75%</span>
+            <div class="skill-progress">
+              <div class="skill-progress-bar" style="width: 75%;"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section Projets -->
+    <!-- Projets -->
     <section id="projects">
       <h2>Mes Projets</h2>
       <div class="projects-container">
-
         <article class="project-card">
           <h3>APPLICATION WEB DE COVOITURAGE (CERICAR)</h3>
-          <p>Développement d’une application web dynamique, de réservations des trajets avec gestion des utilisateurs,
-            annonces (PHP, Framework Yii, JQuery).</p>
+          <p>Développement d’une application web dynamique, de réservations des trajets avec gestion des utilisateurs, annonces (PHP, Framework Yii, JQuery).</p>
         </article>
 
         <article class="project-card">
           <h3>SYSTÈME INTERACTIF</h3>
-          <p>Développement d’un système inspiré par des services des fournisseurs d’accès à Internet (FAI), offrant aux
-            utilisateurs la possibilité de configurer leur réseau.</p>
+          <p>Développement d’un système inspiré par des services fournisseurs d’accès à Internet (FAI), permettant aux utilisateurs de configurer leur réseau.</p>
         </article>
 
         <article class="project-card">
           <h3>SALON VISIONNAGE VIRTUEL (PLAYTOGETHER)</h3>
-          <p>Réalisation d'un site web permettant de rejoindre, créer, regarder des vidéos YouTube synchronisées à plusieurs
-            en temps réel (WebSockets, Java, Node.js).</p>
+          <p>Site web pour rejoindre, créer, regarder des vidéos YouTube synchronisées à plusieurs temps réel (WebSockets, Java, Node.js).</p>
         </article>
 
         <article class="project-card">
           <h3>PLATEFORME LOGICIEL DE MONITORING D’UN PARC INFORMATIQUE</h3>
-          <p>Développement d’une plateforme de surveillance des serveurs, détection des situations de crise, création des
-            alertes (Python, Bash, Flask).</p>
+          <p>Plateforme de surveillance des serveurs, détection des crises et alertes (Python, Bash, Flask).</p>
         </article>
 
         <article class="project-card">
           <h3>BRAS MANIPULATEUR</h3>
-          <p>Réalisation d'un bras manipulateur qui permet de distinguer des formes à travers leurs couleurs et de le manipuler
-            avec une application mobile Android.</p>
+          <p>Bras manipulateur distinguant des formes par couleur, contrôlé via application mobile Android.</p>
         </article>
-
       </div>
     </section>
 
-    <!-- Section Contact -->
+    <!-- Contact -->
     <section id="contact">
       <h2>Contact</h2>
       <div class="contact-container">
         <div class="contact-info">
           <h3>Retrouvez-moi</h3>
-          <p><i class="fas fa-envelope"></i> Email:
-            <a href="mailto:alililina163@gmail.com">alililina163@gmail.com</a>
-          </p>
+          <p><i class="fas fa-envelope"></i> Email: <a href="mailto:alililina163@gmail.com">alililina163@gmail.com</a></p>
           <p><i class="fas fa-phone"></i> Tel: +33 7 49 02 84 08</p>
         </div>
 
@@ -190,10 +231,7 @@
           <input type="text" name="name" placeholder="Nom" required />
           <input type="email" name="email" placeholder="Email" required />
           <textarea name="message" placeholder="Message" rows="6" required></textarea>
-          <button type="submit">
-            Envoyer
-            <i class="fas fa-paper-plane"></i>
-          </button>
+          <button type="submit">Envoyer <i class="fas fa-paper-plane"></i></button>
         </form>
       </div>
     </section>
@@ -203,7 +241,6 @@
     &copy; 2026 Alili Lina - Portfolio LINA ALILI.
   </footer>
 
-  <!-- Script -->
   <script src="scripts.js"></script>
 </body>
 
