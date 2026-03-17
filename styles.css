@@ -124,14 +124,6 @@ nav .logo {
   text-align: justify; /* Optionnel, pour rendre propre */
 }
 
-/* Boutons alignés à gauche mais centrés verticalement */
-.hero-buttons {
-  display: flex;
-  gap: 25px;
-  justify-content: flex-start;
-}
-
-/* Boutons style */
 .btn-primary,
 .btn-secondary {
   padding: 14px 35px;
@@ -141,28 +133,33 @@ nav .logo {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
 }
 
+/* Bouton bleu dégradé */
 .btn-primary {
   background: linear-gradient(90deg, #697bff, #8f95ff);
   color: white;
-  box-shadow: 0 5px 20px rgb(106 115 255 / 0.4);
+  box-shadow: 0 5px 20px rgba(106, 115, 255, 0.4);
+  border: none;
 }
 
 .btn-primary:hover {
   background: linear-gradient(90deg, #505ee5, #646cea);
-  box-shadow: 0 8px 30px rgb(74 70 255 / 0.5);
+  box-shadow: 0 8px 30px rgba(74, 70, 255, 0.5);
 }
 
+/* Bouton gris clair */
 .btn-secondary {
   background: #eee;
   color: #111022;
+  border: none;
 }
 
 .btn-secondary:hover {
   background: #ccc;
 }
-
 /* Photo ronde à droite */
 .hero-img-container {
   position: relative;
