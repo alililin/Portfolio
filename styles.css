@@ -77,63 +77,60 @@ nav .logo {
   cursor: pointer;
 }
 
-/* HERO */
-#hero {
-  text-align: center;
-  padding: 90px 20px 80px;
-  max-width: 800px;
-  margin: 0 auto 80px;
-}
-
-#hero h1 {
+/* Nom centré en haut */
+.hero-name {
   font-size: 3.5rem;
   font-weight: 900;
   color: #7a6aff;
-  margin-bottom: 10px;
+  margin: 0 auto 30px auto;
+  max-width: 800px;
+  text-align: center;
+  text-shadow: 0 0 8px #7a6affcc;
+  user-select: none;
 }
 
-#hero h2 {
-  color: #00d1c1;
+/* Container principal (texte + photo) */
+.hero-main {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  text-align: left;
+}
+
+/* Texte alineé à gauche */
+.hero-text {
+  flex: 1 1 550px;
+  max-width: 550px;
+}
+
+/* Sous-titre */
+.hero-text h2 {
   font-size: 1.6rem;
-  margin-bottom: 25px;
   font-weight: 700;
+  color: #00d1c1;
+  margin-bottom: 25px;
+  text-shadow: 0 0 8px #00d1c1cc;
 }
 
-#hero p {
+/* Paragraphe */
+.hero-text p {
   font-size: 1.1rem;
   color: #ccc;
-  max-width: 650px;
-  margin: 0 auto 40px;
+  margin-bottom: 40px;
   line-height: 1.6;
 }
 
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.social-icons a {
-  background: rgba(255 255 255 / 0.1);
-  padding: 15px;
-  border-radius: 12px;
-  color: #7a6aff;
-  font-size: 1.8rem;
-  transition: background 0.3s, color 0.3s;
-}
-
-.social-icons a:hover {
-  background: #00d1c1;
-  color: #111022;
-}
-
+/* Boutons alignés à gauche au sein du texte */
 .hero-buttons {
   display: flex;
-  justify-content: center;
   gap: 25px;
 }
 
+/* Garde ton CSS boutons existant */
 .btn-primary,
 .btn-secondary {
   padding: 14px 35px;
@@ -164,32 +161,22 @@ nav .logo {
 .btn-secondary:hover {
   background: #ccc;
 }
-#hero {
-  display: flex;
-  gap: 60px;
-  align-items: center;
-  justify-content: center; /* centre horizontalement le container */
-  flex-wrap: wrap;
-}
 
-.hero-text {
-  flex: 1 1 500px;
-  max-width: 550px;
-  /* Ici éventuellement text-align:left */
-  text-align: left;
-}
-
+/* Photo à droite */
 .hero-img-container {
   position: relative;
   width: 320px;
   height: 320px;
-  flex: 0 0 320px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  user-select: none;
 }
 
 /* Cercle jaune derrière la photo */
 .circle-bg {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 320px;
   height: 320px;
   background-color: #ffb941;
@@ -198,16 +185,16 @@ nav .logo {
   box-shadow: 0 0 15px 3px rgba(255, 185, 65, 0.5);
 }
 
-/* Photo ronde */
+/* Image ronde */
 .hero-img {
   position: relative;
   width: 320px;
   height: 320px;
   border-radius: 50%;
   object-fit: cover;
-  z-index: 2;
-  border: 6px solid #191a33; /* bord bleu nuit foncé */
+  border: 6px solid #191a33;
   box-shadow: 0 0 20px #222533;
+  z-index: 2;
   transition: transform 0.3s ease;
 }
 
@@ -215,9 +202,9 @@ nav .logo {
   transform: scale(1.05);
 }
 
-/* Responsive */
+/* Responsive : empilement vertical pour petits écrans */
 @media (max-width: 768px) {
-  #hero {
+  .hero-main {
     flex-direction: column;
     gap: 30px;
     text-align: center;
@@ -225,10 +212,15 @@ nav .logo {
   .hero-text {
     max-width: 100%;
   }
-  .hero-img-container, .circle-bg, .hero-img {
+  .hero-img-container,
+  .circle-bg,
+  .hero-img {
     width: 260px;
     height: 260px;
     margin: 0 auto;
+  }
+  .hero-buttons {
+    justify-content: center;
   }
 }
 /* Sections titles */
