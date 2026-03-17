@@ -77,106 +77,33 @@ nav .logo {
   cursor: pointer;
 }
 
-/* Nom centré en haut */
-.hero-name {
-  font-size: 3.5rem;
-  font-weight: 900;
-  color: #7a6aff;
-  margin: 0 auto 30px auto;
-  max-width: 800px;
-  text-align: center;
-  text-shadow: 0 0 8px #7a6affcc;
-  user-select: none;
+#hero {
+  display: flex;
+  flex-wrap: nowrap; /* empêche la photo de descendre */
+  gap: 60px;
+  align-items: center; /* aligner verticalement texte et image */
+  justify-content: center;
+  padding: 40px 20px 80px;
 }
 
-/* Container principal (texte + photo) */
-.hero-main {
-  display: flex;
-  max-width: 900px;
-  margin: 0 auto 80px auto;
-  gap: 60px;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
+.hero-text {
+  flex: 1 1 550px; /* prend maximum 550px mais peut rétrécir */
+  max-width: 550px;
   text-align: left;
 }
 
-/* Texte alineé à gauche */
-.hero-text {
-  flex: 1 1 550px;
-  max-width: 550px;
-}
-
-/* Sous-titre */
-.hero-text h2 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #00d1c1;
-  margin-bottom: 25px;
-  text-shadow: 0 0 8px #00d1c1cc;
-}
-
-/* Paragraphe */
-.hero-text p {
-  font-size: 1.1rem;
-  color: #ccc;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-/* Boutons alignés à gauche au sein du texte */
-.hero-buttons {
-  display: flex;
-  gap: 25px;
-}
-
-/* Garde ton CSS boutons existant */
-.btn-primary,
-.btn-secondary {
-  padding: 14px 35px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  border-radius: 25px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, #697bff, #8f95ff);
-  color: white;
-  box-shadow: 0 5px 20px rgb(106 115 255 / 0.4);
-}
-
-.btn-primary:hover {
-  background: linear-gradient(90deg, #505ee5, #646cea);
-  box-shadow: 0 8px 30px rgb(74 70 255 / 0.5);
-}
-
-.btn-secondary {
-  background: #eee;
-  color: #111022;
-}
-
-.btn-secondary:hover {
-  background: #ccc;
-}
-
-/* Photo à droite */
 .hero-img-container {
   position: relative;
   width: 320px;
   height: 320px;
-  flex-shrink: 0;
+  flex-shrink: 0; /* éviter rétrécissement */
   flex-grow: 0;
-  user-select: none;
 }
 
-/* Cercle jaune derrière la photo */
+/* Cercle jaune */
 .circle-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 320px;
   height: 320px;
   background-color: #ffb941;
@@ -185,15 +112,15 @@ nav .logo {
   box-shadow: 0 0 15px 3px rgba(255, 185, 65, 0.5);
 }
 
-/* Image ronde */
+/* Photo ronde */
 .hero-img {
   position: relative;
   width: 320px;
   height: 320px;
   border-radius: 50%;
   object-fit: cover;
-  border: 6px solid #191a33;
-  box-shadow: 0 0 20px #222533;
+  border: 8px solid #11102b;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
   z-index: 2;
   transition: transform 0.3s ease;
 }
@@ -202,25 +129,26 @@ nav .logo {
   transform: scale(1.05);
 }
 
-/* Responsive : empilement vertical pour petits écrans */
+/* Responsive : sur petits écrans, empile verticalement et centre */
 @media (max-width: 768px) {
-  .hero-main {
+  #hero {
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 30px;
     text-align: center;
   }
+
   .hero-text {
     max-width: 100%;
+    text-align: center;
   }
+
   .hero-img-container,
   .circle-bg,
   .hero-img {
     width: 260px;
     height: 260px;
     margin: 0 auto;
-  }
-  .hero-buttons {
-    justify-content: center;
   }
 }
 /* Sections titles */
