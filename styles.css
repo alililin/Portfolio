@@ -280,6 +280,160 @@ h2 {
   border-radius: 8px;
   transition: width 0.5s ease;
 }
+/* Conteneur flex pour les 2 blocs certification et badge */
+.certif-flex-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+/* Carte certification / badge */
+.certif-card {
+  background: rgba(255 255 255 / 0.07);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 0 35px #7a6affaa;
+  color: white;
+  max-width: 480px;
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  user-select: none;
+}
+
+/* Icône ronde colorée en haut */
+.certif-icon {
+  font-size: 2.8rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  opacity: 0.15;
+}
+
+.certif-icon.yellow {
+  background: #ff9b21;
+  color: black;
+}
+
+.certif-icon.green {
+  background: #40c057;
+  color: white;
+}
+
+/* Titre */
+.certif-card h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-left: 100px; /* espace à gauche pour icône */
+  margin-top: 0;
+}
+
+/* Année */
+.certif-year {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #bbb;
+  padding-left: 100px;
+  margin-bottom: 18px;
+  user-select: text;
+}
+
+/* Description */
+.certif-description {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ddd;
+  padding-left: 100px;
+  min-height: 90px;
+  user-select: text;
+}
+
+/* Tags techniques */
+.certif-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-left: 100px;
+  user-select: none;
+}
+
+.certif-tags span {
+  background: rgba(255 255 255 / 0.15);
+  border-radius: 16px;
+  padding: 5px 16px;
+  font-size: 0.85rem;
+  color: white;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.certif-tags span:hover {
+  background: rgba(255 255 255 / 0.35);
+}
+
+/* Bouton lien */
+.certif-link {
+  margin-left: 100px;
+  display: inline-flex;
+  padding: 10px 22px;
+  border-radius: 28px;
+  background: linear-gradient(90deg,#697bff,#8f95ff);
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 1rem;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 20px #7a6affbb;
+  border: none;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.certif-link:hover {
+  background: linear-gradient(90deg,#505ee5,#646cea);
+}
+
+.certif-link i {
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .certif-flex-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .certif-card {
+    max-width: 100%;
+  }
+  .certif-link, 
+  .certif-tags,
+  .certif-description,
+  .certif-year,
+  .certif-card h3 {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .certif-icon {
+    position: relative;
+    left: 0;
+    margin-bottom: 10px;
+    opacity: 1;
+  }
+}
 
 /* Projets */
 #projects {
