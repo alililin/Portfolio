@@ -77,66 +77,100 @@ nav .logo {
   cursor: pointer;
 }
 
-/* Nom centré en haut */
+/* Nom centré */
 .hero-name {
   font-size: 3.5rem;
   font-weight: 900;
   color: #7a6aff;
-  margin: 0 auto 30px auto;
-  max-width: 800px;
   text-align: center;
-  text-shadow: 0 0 8px #7a6affcc;
+  margin-bottom: 30px;
   user-select: none;
 }
 
-/* Container principal avec texte et image côte à côte */
+/* Conteneur principal */
 .hero-main {
   display: flex;
-  max-width: 960px;
+  max-width: 900px;
   margin: 0 auto 80px auto;
   gap: 60px;
-  align-items: flex-start; /* aligne le haut du texte à celui de l'image */
+  align-items: flex-start;
   justify-content: center;
-  flex-wrap: nowrap;
   text-align: left;
+  flex-wrap: nowrap;
 }
 
-/* Texte côté gauche */
+/* Texte à gauche */
 .hero-text {
   flex: 1 1 550px;
   max-width: 550px;
 }
 
-/* Sous-titre */
+/* Sous-titre centré avec ombre */
 .hero-text h2 {
   font-size: 1.6rem;
   font-weight: 700;
   color: #00d1c1;
+  text-align: center;  /* Centré comme sur l'image */
   margin-bottom: 25px;
   text-shadow: 0 0 8px #00d1c1cc;
 }
 
-/* Paragraphe */
+/* Paragraphe avec texte justifié */
 .hero-text p {
   font-size: 1.1rem;
   color: #ccc;
   margin-bottom: 40px;
   line-height: 1.6;
+  text-align: justify; /* Optionnel, pour rendre propre */
 }
 
-/* Boutons alignés à gauche */
+/* Boutons alignés à gauche mais centrés verticalement */
 .hero-buttons {
   display: flex;
   gap: 25px;
+  justify-content: flex-start;
 }
 
-/* Photo ronde */
+/* Boutons style */
+.btn-primary,
+.btn-secondary {
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #697bff, #8f95ff);
+  color: white;
+  box-shadow: 0 5px 20px rgb(106 115 255 / 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #505ee5, #646cea);
+  box-shadow: 0 8px 30px rgb(74 70 255 / 0.5);
+}
+
+.btn-secondary {
+  background: #eee;
+  color: #111022;
+}
+
+.btn-secondary:hover {
+  background: #ccc;
+}
+
+/* Photo ronde à droite */
 .hero-img-container {
   position: relative;
   width: 320px;
   height: 320px;
   flex-shrink: 0;
   flex-grow: 0;
+  user-select: none;
 }
 
 /* Cercle jaune derrière photo */
@@ -146,10 +180,10 @@ nav .logo {
   left: 0;
   width: 320px;
   height: 320px;
-  background-color: #ffb941;
   border-radius: 50%;
+  background-color: #ffb941;
+  box-shadow: 0 0 15px 3px rgba(255, 185, 65, 0.5);
   z-index: 1;
-  box-shadow: 0 0 15px 3px rgba(255,185,65,0.5);
 }
 
 /* Image ronde */
@@ -169,7 +203,7 @@ nav .logo {
   transform: scale(1.05);
 }
 
-/* RESPONSIVE : empilement sur petits écrans */
+/* Responsive */
 @media (max-width: 768px) {
   .hero-main {
     flex-direction: column;
@@ -177,18 +211,29 @@ nav .logo {
     text-align: center;
     align-items: center;
   }
+
   .hero-text {
     max-width: 100%;
   }
+
   .hero-buttons {
     justify-content: center;
   }
+
   .hero-img-container,
   .circle-bg,
   .hero-img {
     width: 260px;
     height: 260px;
     margin: 0 auto;
+  }
+
+  .hero-text h2 {
+    text-align: center;
+  }
+
+  .hero-text p {
+    text-align: center;
   }
 }
 /* Sections titles */
