@@ -164,6 +164,61 @@ nav .logo {
 .btn-secondary:hover {
   background: #ccc;
 }
+#hero {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+/* Conteneur de l’image avec le cercle jaune derrière */
+.hero-img-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  flex: 0 0 320px;
+}
+
+/* Cercle jaune de fond */
+.circle-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 320px;
+  height: 320px;
+  background-color: #ffb941; /* couleur jaune vif */
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 15px 3px rgba(255, 185, 65, 0.5);
+}
+
+/* Image ronde par-dessus */
+.hero-img {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 2;
+  border: 8px solid #11102b; /* optionnel : bord sombre autour */
+  box-shadow: 0 0 25px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease;
+}
+
+.hero-img-container:hover .hero-img {
+  transform: scale(1.05);
+}
+
+/* Adaptation responsive */
+@media (max-width: 768px) {
+  .hero-img-container,
+  .circle-bg,
+  .hero-img {
+    width: 260px;
+    height: 260px;
+  }
+}
 
 /* Sections titles */
 h2 {
